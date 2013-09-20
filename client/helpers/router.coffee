@@ -12,11 +12,17 @@ Meteor.Router.add
 			
 	"/submit": "postSubmit"
 
-Meteor.Router.filters requireLogin: (page) ->
-	if Meteor.user()
+Meteor.Router.filters
+	requireLogin: (page) ->
+		if Meteor.user()
+			page
+		else
+			"accessDenied"
+	clearErrors: (page) ->
+		clearErrors()
 		page
-	else
-		"accessDenied"
 
 Meteor.Router.filter "requireLogin",
 	only: "postSubmit"
+
+Meteor.Router.filter 'clearErrors'
