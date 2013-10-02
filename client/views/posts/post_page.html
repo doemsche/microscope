@@ -6,6 +6,11 @@
         {{> comment}}
       {{/each}}
     </ul>
+    {{#if currentUser}}
+    	{{>commentSubmit}}
+    {{else}}
+    	<p> Plesae log in to leave a comment </p>
+    {{/if}}
   {{/with}}
   <a href="{{postsListPath}}">Take me back</a>
 </template>
