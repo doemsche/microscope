@@ -12,3 +12,8 @@ Template.postsList.helpers
 
   allPostsLoaded: ->
     not postsHandle.loading() and Posts.find().count() < postsHandle.loaded()
+
+Template.postsList.events
+	'click .load-more': (e)->
+		e.preventDefault()
+		postsHandle.loadNextPage()
