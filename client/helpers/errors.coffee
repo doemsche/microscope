@@ -4,7 +4,6 @@
 	Errors.insert message: message, seen:false
 
 @clearErrors = ->
-	console.log 'errors cleared'
 	Errors.remove seen: true
 
 Template.errors.helpers
