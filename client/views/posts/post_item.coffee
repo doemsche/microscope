@@ -18,5 +18,4 @@ Template.postItem.helpers
 Template.postItem.events
 	'click .upvotable': (e) ->
 		e.preventDefault()
-		console.log @._id
 		Meteor.call 'upvote', @._id
