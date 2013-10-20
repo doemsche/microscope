@@ -15,7 +15,7 @@ Template.postEdit.events
       if error
         
         # display the error to the user
-        alert error.reason
+        Errors.throw(error.reason)
       else
         Meteor.Router.to "postPage", currentPostId
 
